@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+             xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+    <persistence-unit name="pu-test" transaction-type="RESOURCE_LOCAL">
+        <!-- Décommeneter pour utiliser les classes Agenda et Evenement
+        <class>fr.univlyon1.tiw.tiw1.agenda.modele.Agenda</class>
+        <class>fr.univlyon1.tiw.tiw1.agenda.modele.Evenement</class>
+        -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="hibernate.connection.driver_class" value="org.h2.Driver" />
+            <property name="hibernate.connection.url" value="jdbc:h2:tcp://localhost/~/tiw2-db" />
+            <!-- Utiliser le fichier agenda-schema.sql pour créer les tables -->
+            <property name="hibernate.hbm2ddl.auto" value="validate" />
+            <property name="hibernate.connection.username" value="sa"/>
+        </properties>
+    </persistence-unit>
+</persistence>

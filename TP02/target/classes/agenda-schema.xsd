@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:agenda="http://master-info.univ-lyon1.fr/TIW/TIW1/agenda"
+        targetNamespace="http://master-info.univ-lyon1.fr/TIW/TIW1/agenda"
+        elementFormDefault="qualified">
+    <element name="evenement">
+        <complexType>
+            <sequence>
+                <element name="titre" type="string"/>
+                <element name="debut" type="dateTime"/>
+                <element name="fin" type="dateTime"/>
+                <element name="description" type="string"/>
+            </sequence>
+            <attribute name="id" type="string" use="required"/>
+        </complexType>
+    </element>
+
+    <element name="agenda">
+        <complexType>
+            <sequence>
+                <element name="nom" type="string"/>
+                <element ref="agenda:evenement" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
